@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}h2 {
+    color: #6c8091;
+    text-align: left;
+}.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}.card-content {
+    padding: 15px;
+    text-align: left;
+}.card-title {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #6c8091;
+    margin: 0 0 10px;
+}.card-link {
+    text-decoration: none;
+    font-weight: 400;
+    color: #d0b200;
+    font-size: 1em;
+}.card-link:hover {
+    text-decoration: underline;
+}@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}@media (max-width: 576px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
