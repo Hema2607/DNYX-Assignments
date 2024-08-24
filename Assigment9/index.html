@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 280px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: green;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Update Password</h2>
+        <form id="updateForm">
+            <label for="newPass">New Password:</label>
+            <input type="password" id="newPass">
+            <p id="newPassErr" class="error"></p>
+            
+            <label for="confirmPass">Confirm Password:</label>
+            <input type="password" id="confirmPass">
+            <p id="confirmPassErr" class="error"></p>
+            
+            <button type="submit" id="updateBtn">Update</button>
+            <p id="msg" class="success"></p>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBus41N7It6LRJ1mHAWT4LoAcDwP2LlR58",
+            authDomain: "updatepassword-53198.firebaseapp.com",
+            databaseURL: "https://updatepassword-53198-default-rtdb.firebaseio.com",
+            projectId: "updatepassword-53198",
+            storageBucket: "updatepassword-53198.appspot.com",
+            messagingSenderId: "586532211451",
+            appId: "1:586532211451:web:4b3fce479c00024bf1fe5e",
+            measurementId: "G-TRZSF023N2"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        let form = document.getElementById('updateForm');
+        let newPass = document.getElementById('newPass');
+        let confirmPass = document.getElementById('confirmPass');
+        let newPassErr = document.getElementById('newPassErr');
+        let confirmPassErr = document.getElementById('confirmPassErr');
+        let msg = document.getElementById('msg');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            if (newPass.value === '') {
+                newPassErr.textContent = 'Required.';
+                isValid = false;
+            } else {
+                newPassErr.textContent = '';
+            }
+
+            if (confirmPass.value === '') {
+                confirmPassErr.textContent = 'Required.';
+                isValid = false;
+            } else if (newPass.value !== confirmPass.value) {
+                confirmPassErr.textContent = 'Passwords do not match.';
+                isValid = false;
+            } else {
+                confirmPassErr.textContent = '';
+            }
+
+            if (isValid) {
+                const hashedPassword = btoa(newPass.value); 
+                
+                const userId = "someUserId"; 
+                db.ref('users/' + userId).update({
+                    password: hashedPassword
+                }).then(() => {
+                    msg.textContent = 'Password updated!';
+                    form.reset();
+                }).catch((error) => {
+                    msg.textContent = 'Error: ' + error.message;
+                });
+            } else {
+                msg.textContent = ''; 
+            }
+        });
+    </script>
+</body>
+</html>
