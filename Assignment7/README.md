@@ -82,14 +82,50 @@
    
 
          let temperature = 25;
+   
          if(temperature>30){
+   
                console.log("It's hot now");
-         }
-         else{
+   
+         }else{
+   
                console.log("The temperature is moderate");
+   
          }
+
+      OUTPUT:
+
+         The temperature is moderate
+   
+8. For loop:
+
+
+         for(let i=1;i<=5;i++){
+
+               console.log(i);
+         }
+
+   OUTPUT:
+
+         1
+         2
+         3
+         4
+         5
+
          
 
+9. Loose vs Strict Equality:
+
+
+      => Loose equality is used to check whether two items are same irrespective of their data types.
+
+         console.log(10=='10'); //output: true
+
+      => Strict equality is used to check whether two items are same by considering their data types.
+
+         console.log(10==='10') //output: false
+    
      
       
       
