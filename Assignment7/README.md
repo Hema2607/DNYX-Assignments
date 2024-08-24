@@ -10,41 +10,41 @@
 2. Variables and types:
 
 
-     let userAge = 35;
+        let userAge = 35;
    
-     var userName = "John";
+        var userName = "John";
    
-     console.log("Name: "+ name + " ,Age: " + age);  //output: Name: John , Age: 35
+        console.log("Name: "+ name + " ,Age: " + age);  //output: Name: John , Age: 35
 
 
-4. Comments in JS:
+3. Comments in JS:
 
-     /* in the above i have created a person's age with let keyword. This keyword will allow the user or us to change the value. In the second line I have created another variable that will store the person's name. And at the last, I have displayed the output in the console window.*/
+        /* in the above i have created a person's age with let keyword. This keyword will allow the user or us to change the value. In the second line I have created another variable that will store the person's name. And at the last, I have displayed the output in the console window.*/
 
-5. Operations:
+4. Operations:
 
 
-     let num1 = 20;
+        let num1 = 20;
    
-     let nums2 = 5;
+        let nums2 = 5;
    
-     let add = num1 + num2;
+        let add = num1 + num2;
    
-     let sub = num1 - num2;
+        let sub = num1 - num2;
    
-     let multiply = num1 * num2;
+        let multiply = num1 * num2;
    
-     let divide = num1 / num2;
+        let divide = num1 / num2;
 
-     console.log("Addition: " + add);  //output: 25
+        console.log("Addition: " + add);  //output: 25
    
-     console.log("Subtraction: " + sub);  //output: 15
+        console.log("Subtraction: " + sub);  //output: 15
    
-     console.log("Multilpication: " + multiply);  //output: 100
+        console.log("Multilpication: " + multiply);  //output: 100
    
-     console.log("Division: " + divide);  //output: 4
+        console.log("Division: " + divide);  //output: 4
 
-6. Data Types:
+5. Data Types:
 
 
       i.String:
@@ -66,6 +66,17 @@
       iv. Array:
 
          let arr = ["Javascript","HTML","CSS","Tailwind"];
+
+6. Functions in JS:
+
+         function greetUser(name){
+
+               return 'Hi, ${name}!';
+
+         }
+
+         console.log(greetUser(John));
+         
 
      
       
