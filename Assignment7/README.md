@@ -44,6 +44,29 @@
    
      console.log("Division: " + divide);  //output: 4
 
+6. Data Types:
+
+
+      i.String:
+
+         let name = "John";
+
+      ii. Numbers:
+   
+         let a = 25; //integer
+
+         let b = 34.6; //floating point
+
+      iii. Boolean:
+
+         let istrue = true;
+
+         let isfalse = false;
+
+      iv. Array:
+
+         let arr = ["Javascript","HTML","CSS","Tailwind"];
+
      
       
       
