@@ -69,13 +69,25 @@
 
 6. Functions in JS:
 
+
          function greetUser(name){
 
-               return 'Hi, ${name}!';
+               return `Hi, ${name}!`;
 
          }
 
-         console.log(greetUser(John));
+         console.log(greetUser("John"));
+
+7. If-Else in JS:
+   
+
+         let temperature = 25;
+         if(temperature>30){
+               console.log("It's hot now");
+         }
+         else{
+               console.log("The temperature is moderate");
+         }
          
 
      
